@@ -7,7 +7,7 @@ document.addEventListener("load", await () => {
 
 window.addEventListener("load", () => {
     if (window.location.href.includes("?")) {
-        document.getElementById("iframe").setAttribute("src", `https://youtube.com/embed/${}/`);
+        document.getElementById("iframe").setAttribute("src", `https://youtube.com/embed/${window.location.search.substring(1)}/`);
     }
 });
 document.getElementById("submit").addEventListener("click", watch);
