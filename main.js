@@ -13,13 +13,13 @@ window.addEventListener("load", () => {
     if (window.location.href.includes("?")) {
         document.getElementById("iframe").setAttribute("src", `https://youtube.com/embed/${window.location.search.substring(1)}/`);
     }
-});
-document.getElementById("submit").addEventListener("click", watch);
-document.getElementById("input").addEventListener("input", (e) => {
-    if (e.key === "Enter") {
-        e.preventDefault();
-        watch();
-    }
+    document.getElementById("submit").addEventListener("click", watch);
+    document.getElementById("input").addEventListener("input", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            watch();
+        }
+    });
 });
 
 const watch = () => {
