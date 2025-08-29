@@ -1,3 +1,7 @@
+document.addEventListener("load", () => {
+    document.querySelectorAll("iframe")[1].remove();
+});
+
 document.getElementById("submit").addEventListener("click", watch);
 document.getElementById("input").addEventListener("input", (e) => {
     if (e.key === "Enter") {
