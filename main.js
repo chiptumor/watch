@@ -35,7 +35,3 @@ const watch = () => {
 
     document.getElementById("iframe").setAttribute("src", `https://youtube.com/embed/${video}/`);
 };
-
-window.addEventListener("load", () => {
-    window.alert(document.getElementById("input").getAttribute("src"));
-});
