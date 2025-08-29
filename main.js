@@ -4,7 +4,7 @@ window.addEventListener("error", (e) => {
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
-document.addEventListener("load", await () => {
+document.addEventListener("load", async () => {
     await delay(500);
     document.querySelectorAll("iframe")[1].remove();
 });
