@@ -33,7 +33,11 @@ const watch = () => {
         return id;
     })();
 
-    console.log(video);
+    window.alert(video);
 
     document.getElementById("iframe").setAttribute("src", `https://youtube.com/embed/${video}/`);
 };
+
+window.addEventListener("load", () => {
+    window.alert(document.getElementById("input").getAttribute("src"));
+});
