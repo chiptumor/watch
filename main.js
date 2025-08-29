@@ -1,3 +1,7 @@
+window.addEventListener("error", (e) => {
+    window.alert(e.message);
+});
+
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 document.addEventListener("load", await () => {
