@@ -1,11 +1,23 @@
-// REGEX:
-// (?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/)|^)([A-Za-z0-9_-]+)(?=\b|[?&]|$)
-/** SUGGESTED SCRIPT ***
-const url = "https://youtu.be/VIDEO?s=1234";
+document.getElementById("submit").addEventListener("click", watch);
+document.getElementById("input").addEventListener("input", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        watch();
+    }
+});
 
-const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/)|^)([A-Za-z0-9_-]{6,})(?=\b|[?&]|$)/);
+const watch = () => {
+    const input = document.getElementById("input").value;
 
-const videoID = match ? match[1] : null;
+    const video = (() => {
+        const match = input.match(
+            /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/)|^)([A-Za-z0-9_-]+)(?=\b|[?&]|$)/
+        );
+        const id = match ? match[1] : null;
+        return id;
+    })();
 
-console.log(videoID); // Outputs: VIDEO
-************************/
+    console.log(video);
+
+    document.getElementById("iframe").setAttribute("src", `https://youtube.com/embed/${video}/`);
+};
