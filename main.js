@@ -5,6 +5,11 @@ document.addEventListener("load", await () => {
     document.querySelectorAll("iframe")[1].remove();
 });
 
+window.addEventListener("load", () => {
+    if (window.location.href.includes("?")) {
+        document.getElementById("iframe").setAttribute("src", `https://youtube.com/embed/${}/`);
+    }
+});
 document.getElementById("submit").addEventListener("click", watch);
 document.getElementById("input").addEventListener("input", (e) => {
     if (e.key === "Enter") {
